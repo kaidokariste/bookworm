@@ -22,9 +22,9 @@ byte        alias for uint8
 rune        alias for int32
 ```
 
-### Markdown
+### Weblinks
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+1. [Connecting to PostgreSQL database with Go](https://www.calhoun.io/using-postgresql-with-golang/)
 
 ```markdown
 Syntax highlighted code block
