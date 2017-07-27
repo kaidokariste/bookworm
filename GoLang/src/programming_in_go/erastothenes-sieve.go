@@ -4,13 +4,13 @@ import "fmt"
 
 // Erathosthenes famous algorithm for finding prime numbers
 // Returns intgere slice and total count of primes
-func erathosthenes_sieve(limit_number int) ([]int, int) {
+func erathosthenes_sieve(limit_number int64) ([]int64, int64) {
 
 	// Define base slice with first prime number 2
-	base_slice := []int{2}
+	base_slice := []int64{2}
 
 	// Next we loop trough all numbers starting from 2 till user given limit
-	for i:=2; i <= limit_number; i++ {
+	for i := int64(2); i <= limit_number; i++ {
 
 		// Loop trough the slice
 		for index, number := range base_slice {
@@ -35,13 +35,13 @@ func erathosthenes_sieve(limit_number int) ([]int, int) {
 
 	}
 	// Return slice and the count of them
-	return base_slice, len(base_slice)
+	return base_slice, int64(len(base_slice))
 
 }
 
 
 func main()  {
-	prime_numbers, total := erathosthenes_sieve(100)
+	prime_numbers, total := erathosthenes_sieve(99999)
 	fmt.Println("Prime numbers", prime_numbers, "total of them", total)
 
 }
