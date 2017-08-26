@@ -5,37 +5,34 @@ import (
 	"log"
 	"net/http"
 
-	"gopkg.in/mgo.v2/bson"
-
 	"github.com/gorilla/mux"
-	. "movistoreAPI/config"
-	. "movistoreAPI/dao"
-	. "movistoreAPI/models"
+	. "communalAPI/config"
+	. "communalAPI/dao"
 
 )
 
 var config = Config{}
-var dao = MoviesDAO{}
+var dao = PaymentDAO{}
 
 // GET list of movies
 func AllPaymentsEndPoint(w http.ResponseWriter, r *http.Request) {
-	movies, err := dao.FindAll()
+	payment, err := dao.FindAll()
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, err.Error())
 		return
 	}
-	respondWithJson(w, http.StatusOK, movies)
+	respondWithJson(w, http.StatusOK, payment)
 }
 
 // // GET a movie by its ID
 func FindPaymentEndpoint(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
-	movie, err := dao.FindById(params["id"])
+	payment, err := dao.FindById(params["id"])
 	if err != nil {
 		respondWithError(w, http.StatusBadRequest, "Invalid Movie ID")
 		return
 	}
-	respondWithJson(w, http.StatusOK, movie)
+	respondWithJson(w, http.StatusOK, payment)
 }
 
 
@@ -54,8 +51,8 @@ func respondWithJson(w http.ResponseWriter, code int, payload interface{}) {
 func init() {
 	config.Read()
 
-	dao.Server = config.Server
-	dao.Database = config.Database
+	dao.DBUrl = config.DBUrl
+	dao.AuthDatabase = config.AuthDatabase
 	dao.Connect()
 }
 
@@ -65,8 +62,8 @@ func main() {
 	/*r.HandleFunc("/movies", CreateMovieEndPoint).Methods("POST")
 	r.HandleFunc("/movies", UpdateMovieEndPoint).Methods("PUT")
 	r.HandleFunc("/movies", DeleteMovieEndPoint).Methods("DELETE")*/
-	r.HandleFunc("/payment/{id}", FindPaymentEndpoint).Methods("GET")
-	if err := http.ListenAndServe(":3000", r); err != nil {
+	r.HandleFunc("/payments/{id}", FindPaymentEndpoint).Methods("GET")
+	if err := http.ListenAndServe(":3001", r); err != nil {
 		log.Fatal(err)
 	}
 }
