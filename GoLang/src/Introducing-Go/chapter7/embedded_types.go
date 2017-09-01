@@ -7,7 +7,7 @@ type Person struct {
 }
 
 // Method talk
-func (p *Person) Talk() {
+func (p Person) Talk() {
 	fmt.Println("Hi my name is", p.Name)
 }
 
