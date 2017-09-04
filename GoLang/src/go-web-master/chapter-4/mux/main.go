@@ -48,14 +48,19 @@ func PostNoteHandler(w http.ResponseWriter, r *http.Request) {
 //HTTP Get - /api/notes
 func GetNoteHandler(w http.ResponseWriter, r *http.Request) {
 	var notes []Note
+	// iterate trough noteStore map and append values into notes Slice
 	for _, v := range noteStore {
 		notes = append(notes, v)
 	}
+	// func (h Header) Set(key, value string)
 	w.Header().Set("Content-Type", "application/json")
+
+	// Notes slice is encoded as JSON
 	j, err := json.Marshal(notes)
 	if err != nil {
 		panic(err)
 	}
+	// ResponseWriter is used to write response header and bodies
 	w.WriteHeader(http.StatusOK)
 	w.Write(j)
 }
