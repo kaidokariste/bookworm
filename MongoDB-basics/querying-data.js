@@ -28,6 +28,10 @@ db.payment.find({"address.street": "Anne", "fees.year": 2017}).count()
 // Retrieving unique values , currently total payments
 db.payment.distinct("fees.total")
 
+//Find all documents where myPersonalCode is larger than 30, 
+//sort by timestamp DESC and limit 100 for not to overuse memory
+db['Collection'].find({ $where: "this.myPersonalCode.length > 30" }).sort({"timestamp": -1}).limit(100);
+
 /*
 Working with conditional operators
 */
