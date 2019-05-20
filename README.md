@@ -1,12 +1,28 @@
 # UNIX
 ## UNIX> Uue kasutaja loomine 
-```$sudo useradd -m -s /bin/bash myusername``` - Kasustaja loomine
-```$sudo passwd myusername``` - Parooli määramine
+```$sudo useradd -m -s /bin/bash myusername``` - Kasustaja loomine  
+```$sudo passwd myusername``` - Parooli määramine  
 ```$sudo gpasswd -a myusername sudo``` - Kasutaja lisamine sudo gruppi
 
 ## UNIX > Enimkasutatavad käsud
-```$touch failinimi```    - uus fail
-```$pwd```                - kausta path 
+```$touch myFile```    - uus fail  
+```$pwd```             - kausta teekond  
+```$mkdir myFolder``` - uue kataloogi loomine  
+```$rmdir myFolder``` - tühja kataloogi kustutamine  
+```$rm -rf myFolder``` - kataloogi kustutamine kui ta sisaldab faile  
+```$ps -A``` - kõik masinas jooksvad protsessid  
+```$top``` - aktiivsed protsessid
+```$ps -u myUser``` - kasutajaspetsiifiliselt aktiivsed protsessid  
+```$sudo cp /folder/from /folder/to``` - faili/kausta kopeerimine  
+```$ls -lah``` - faili täiendatud nimekiri  
+```$cat myFile``` - faili sisu vaatamine  
+```$sudo tar -jcvf myArchive.tbz2 myFolder``` - arhiivi tekitamine kaustast 
+```$tar -jxvf myArchive.tbz2``` - arhiivi lahtipakkimine 
+```$du -h``` - disk usage  
+```$du -h -d 1``` - disk usage üks kategooria täpsemalt  
+```$df -h``` - üldine kettakasutus  
+```$mv myOldFileName myNewFileName``` - faili ümbernimetamine  
+```$ln -s git/myProject symApp``` - loob sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp
 
 
 
