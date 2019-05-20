@@ -11,20 +11,28 @@
 ```$rmdir myFolder``` - tühja kataloogi kustutamine  
 ```$rm -rf myFolder``` - kataloogi kustutamine kui ta sisaldab faile  
 ```$ps -A``` - kõik masinas jooksvad protsessid  
-```$top``` - aktiivsed protsessid
+```$top``` - aktiivsed protsessid  
 ```$ps -u myUser``` - kasutajaspetsiifiliselt aktiivsed protsessid  
 ```$sudo cp /folder/from /folder/to``` - faili/kausta kopeerimine  
 ```$ls -lah``` - faili täiendatud nimekiri  
 ```$cat myFile``` - faili sisu vaatamine  
-```$sudo tar -jcvf myArchive.tbz2 myFolder``` - arhiivi tekitamine kaustast 
-```$tar -jxvf myArchive.tbz2``` - arhiivi lahtipakkimine 
+```$sudo tar -jcvf myArchive.tbz2 myFolder``` - arhiivi tekitamine kaustast  
+```$tar -jxvf myArchive.tbz2``` - arhiivi lahtipakkimine  
 ```$du -h``` - disk usage  
 ```$du -h -d 1``` - disk usage üks kategooria täpsemalt  
 ```$df -h``` - üldine kettakasutus  
 ```$mv myOldFileName myNewFileName``` - faili ümbernimetamine  
 ```$ln -s git/myProject symApp``` - loob sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp
 
+## UNIX > SSH ühendus remote serverisse
+ - *myComputer* - arvuti, millega soovime repote serverisse/arvutisse ühendada
+ - *remoteHost* - arvuti millesse ühendume
 
+*myComputer -> remoteHost*
+
+ 1. Genereeri myComputeris võtmepaar _private_key_ ja _public_key_ ```$ssh-keygen -t rsa 2048```  
+ 2. remoteHostis ```$vim .ssh/authorized_keys``` ja lisa sinna juurde genereeritud _public_key_
+ 3. Puttyga ühendades, anna ette _myUsername@remoteHost_ ja lisa juurde _private_key_
 
 # Golang
 ## GoLang Types
