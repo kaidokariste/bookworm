@@ -1,3 +1,20 @@
+# UNIX
+## Uue kasutaja loomine 
+Kasustaja loomine
+```
+$sudo useradd -m -s /bin/bash myusername
+```
+Parooli määramine
+```
+sudo passwd myusername
+```
+Kasutaja lisamine sudo gruppi
+```
+sudo gpasswd -a myusername sudo
+```
+
+
+# Golang
 ## GoLang Types
 
 **Numeric types**
