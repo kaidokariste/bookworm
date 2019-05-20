@@ -13,7 +13,7 @@
 ```$ps -A``` - kõik masinas jooksvad protsessid  
 ```$top``` - aktiivsed protsessid  
 ```$ps -u myUser``` - kasutajaspetsiifiliselt aktiivsed protsessid  
-```$sudo cp /folder/from /folder/to``` - faili/kausta kopeerimine  
+`$sudo cp /home/kaido/database.php /var/www/html/config` - faili/kausta kopeerimine  
 ```$ls -lah``` - faili täiendatud nimekiri  
 ```$cat myFile``` - faili sisu vaatamine  
 ```$sudo tar -jcvf myArchive.tbz2 myFolder``` - arhiivi tekitamine kaustast  
