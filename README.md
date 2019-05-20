@@ -1,13 +1,13 @@
 # UNIX
 ## UNIX> Uue kasutaja loomine 
-```$sudo useradd -m -s /bin/bash myusername``` - Kasustaja loomine  
-```$sudo passwd myusername``` - Parooli määramine  
-```$sudo gpasswd -a myusername sudo``` - Kasutaja lisamine sudo gruppi
+`$sudo useradd -m -s /bin/bash myusername` - Kasustaja loomine  
+`$sudo passwd myusername` - Parooli määramine  
+`$sudo gpasswd -a myusername sudo` - Kasutaja lisamine sudo gruppi
 
 ## UNIX > Enimkasutatavad käsud
-```$touch myFile```    - uus fail  
-```$pwd```             - kausta teekond  
-```$mkdir myFolder``` - uue kataloogi loomine  
+`$touch myFile`    - uus fail  
+`$pwd`             - kausta teekond  
+`$mkdir myFolder` - uue kataloogi loomine  
 ```$rmdir myFolder``` - tühja kataloogi kustutamine  
 ```$rm -rf myFolder``` - kataloogi kustutamine kui ta sisaldab faile  
 ```$ps -A``` - kõik masinas jooksvad protsessid  
@@ -62,31 +62,3 @@ rune        alias for int32
 ### Weblinks
 
 1. [Connecting to PostgreSQL database with Go](https://www.calhoun.io/using-postgresql-with-golang/)
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kaidokariste/bookworm/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
