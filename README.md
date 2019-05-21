@@ -8,21 +8,21 @@
 `$touch myFile`    - uus fail  
 `$pwd`             - kausta teekond  
 `$mkdir myFolder` - uue kataloogi loomine  
-```$rmdir myFolder``` - tühja kataloogi kustutamine  
-```$rm -rf myFolder``` - kataloogi kustutamine kui ta sisaldab faile  
-```$ps -A``` - kõik masinas jooksvad protsessid  
-```$top``` - aktiivsed protsessid  
-```$ps -u myUser``` - kasutajaspetsiifiliselt aktiivsed protsessid  
+`$rmdir myFolder` - tühja kataloogi kustutamine  
+`$rm -rf myFolder` - kataloogi kustutamine kui ta sisaldab faile  
+`$ps -A` - kõik masinas jooksvad protsessid  
+`$top` - aktiivsed protsessid  
+`$ps -u myUser` - kasutajaspetsiifiliselt aktiivsed protsessid  
 `$sudo cp /home/kaido/database.php /var/www/html/config` - faili/kausta kopeerimine  
-```$ls -lah``` - faili täiendatud nimekiri  
-```$cat myFile``` - faili sisu vaatamine  
-```$sudo tar -jcvf myArchive.tbz2 myFolder``` - arhiivi tekitamine kaustast  
-```$tar -jxvf myArchive.tbz2``` - arhiivi lahtipakkimine  
-```$du -h``` - disk usage  
-```$du -h -d 1``` - disk usage üks kategooria täpsemalt  
-```$df -h``` - üldine kettakasutus  
-```$mv myOldFileName myNewFileName``` - faili ümbernimetamine  
-```$ln -s git/myProject symApp``` - loob sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp
+`$ls -lah` - faili täiendatud nimekiri  
+`$cat myFile` - faili sisu vaatamine  
+`$sudo tar -jcvf myArchive.tbz2 myFolder` - arhiivi tekitamine kaustast  
+`$tar -jxvf myArchive.tbz2` - arhiivi lahtipakkimine  
+`$du -h` - disk usage  
+`$du -h -d 1` - disk usage üks kategooria täpsemalt  
+`$df -h` - üldine kettakasutus  
+`$mv myOldFileName myNewFileName` - faili ümbernimetamine  
+`$ln -s git/myProject symApp` - loob sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp
 
 ## UNIX > SSH ühendus remote serverisse
  - *myComputer* - arvuti, millega soovime repote serverisse/arvutisse ühendada
@@ -33,6 +33,28 @@
  1. Genereeri myComputeris võtmepaar _private_key_ ja _public_key_ ```$ssh-keygen -t rsa 2048```  
  2. remoteHostis ```$vim .ssh/authorized_keys``` ja lisa sinna juurde genereeritud _public_key_
  3. Puttyga ühendades, anna ette _myUsername@remoteHost_ ja lisa juurde _private_key_
+ 
+# Docker
+
+## Enimkasutatavad käsud
+`$docker images `- näitab teeki kohalikest Docker imagetest  
+`$docker ps ` - aktiivsete konteinerite loend  
+`$docker ps -a ` - kõik konteinerid  
+`$docker rm <container-id>` - konteineri eemaldamine id kaudu  
+`$docker rm $(docker ps -aq)` - kõikide konteinerite kustutamine  
+`$docker rmi <image-id:version>` - dockerimage eemaldamine image-id põhjal  
+`$docker rmi $(docker images -q) ` - image kustutamine hulga kaupa  
+`$docker inspect <container-id>` - konteineri info vaatamine  
+`$docker run -i -t <image-id> /bin/bash` - konteineri jooksutamine olemasolevast konteinerist  
+`$docker start <conteiner-id> ` - seisva konteineri käivitamine  
+`$docker stop <container-id>` - petab etteantud aktiivse konteineri  
+`$docker exec -i -t <conteiner-id> /bin/bash` - jooksvasse konteinerisse sisenemine  
+`$docker run -d <image-id>` - konteineri alustamine ja jooksutamine tagaplaanil  
+`$docker run -d -P <image-id:tag>` - konteineri jooksutamine tagaplaanil ja lisaks kõikide konteineri vabade portide ühendamine host pordiga  
+`$docker push <repository:tag>` - dockerhubi reposse üleslaadimine  
+`$docker cp container:src_path dest:path ` - failide kopeerimine konteinerist hosti  
+`$docker cp SRC_PATH CONTAINER:DEST_PATH ` - failide kopeerimine hostist konteinerisse  
+`$docker build --no-cache -t <container-name> .` - ilma cachita konteineri buildimine dockerfailist  
 
 # Golang
 ## GoLang Types
