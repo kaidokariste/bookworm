@@ -34,8 +34,21 @@
  2. remoteHostis ```$vim .ssh/authorized_keys``` ja lisa sinna juurde genereeritud _public_key_
  3. Puttyga ühendades, anna ette _myUsername@remoteHost_ ja lisa juurde _private_key_
  
-# Docker
+# Git
+## Git > Enimkasutataud käsud
 
+`$git remote -v ` -näitab "fetch" ja "pull" remote aadresse  
+`$git checkout --track remotes/myBranch.git` - uuele remote branchile ümberlülitumine koos muudatuste jälgimisega  
+`$git status` - hetkel kasutatav branch  
+`$git branch -a` - kõik olemasolevad branchid  
+`$git branch -d myBranch` - kohaliku branchi kustutamine  
+`$git branch -d $(gitbranch)` - kõikide kohalike branchide kustutamine  
+`$git branch -r` - kõik remotebranchid  
+`$git pull ` - muudatuste allalaadimine  
+`$git clone https://github.com/myRepo` - repository kloonimine  
+`$git add . ` - failide lisamine committimiseks  
+
+# Docker
 ## Enimkasutatavad käsud
 `$docker images `- näitab teeki kohalikest Docker imagetest  
 `$docker ps ` - aktiivsete konteinerite loend  
