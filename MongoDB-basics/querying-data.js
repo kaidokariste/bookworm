@@ -32,6 +32,9 @@ db.payment.distinct("fees.total")
 //sort by timestamp DESC and limit 100 for not to overuse memory
 db['Collection'].find({ $where: "this.myPersonalCode.length > 30" }).sort({"timestamp": -1}).limit(100);
 
+//Find multiple objects
+db.getCollection('COLLECTION').find({"myPet": {$in: ['Muri','Maasu','Mumm'] }}).limit(10)
+
 /*
 Working with conditional operators
 */
