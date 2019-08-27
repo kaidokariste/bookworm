@@ -42,7 +42,7 @@
 `$git status` - hetkel kasutatav branch  
 `$git branch -a` - kõik olemasolevad branchid  
 `$git branch -d myBranch` - kohaliku branchi kustutamine  
-`$git branch -d $(gitbranch)` - kõikide kohalike branchide kustutamine  
+`$git branch -d $(git branch)` - kõikide kohalike branchide kustutamine  
 `$git branch -r` - kõik remotebranchid  
 `$git pull ` - muudatuste allalaadimine  
 `$git clone https://github.com/myRepo` - repository kloonimine  
