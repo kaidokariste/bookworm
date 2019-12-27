@@ -47,6 +47,8 @@
 `$git pull ` - muudatuste allalaadimine  
 `$git clone https://github.com/myRepo` - repository kloonimine  
 `$git add . ` - failide lisamine committimiseks  
+`$git remote prune origin --dry-run` - kuvab remote branchide nimekirja, mida on võimalik tühjendada  
+`$git remote prune origin` - tühjendab näidatavate remote branchide nimekirja
 
 # Docker
 ## Enimkasutatavad käsud
