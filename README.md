@@ -1,6 +1,7 @@
 # UNIX
 ## UNIX> Uue kasutaja loomine 
-`$sudo useradd -m -s /bin/bash myusername` - Kasustaja loomine  
+`$cat /etc/passwd`- kasutajate vaatamine
+`$sudo useradd -m -s /bin/bash myusername` - Kasutaja loomine  
 `$sudo passwd myusername` - Parooli määramine  
 `$sudo gpasswd -a myusername sudo` - Kasutaja lisamine sudo gruppi
 
