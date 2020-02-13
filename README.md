@@ -23,7 +23,7 @@
 `$du -h -d 1` - disk usage üks kategooria täpsemalt  
 `$df -h` - üldine kettakasutus  
 `$mv myOldFileName myNewFileName` - faili ümbernimetamine  
-`$ln -s git/myProject symApp` - loob sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp 
+`$ln -s git/myProject symApp` - loob sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp  
 `$realpath --relative-to=/folder/from /folder/to` - suhtelise kausta tee saamine (folder/from tavaliselt projekti root)
 
 ## UNIX > SSH ühendus remote serverisse
