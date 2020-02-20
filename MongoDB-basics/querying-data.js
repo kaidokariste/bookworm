@@ -38,6 +38,5 @@ db.getCollection('Collection').find({}).sort( { $natural : -1 } )
 //Find multiple objects
 db.getCollection('COLLECTION').find({"myPet": {$in: ['Muri','Maasu','Mumm'] }}).limit(10)
 
-/*
-Working with conditional operators
-*/
+//Finding document where some property value "is not null" -- here contactMethod should not be null
+db.getCollection('COLLECTION').find({"contractMethod":{$ne:null}}).sort( { $natural : -1 } )
