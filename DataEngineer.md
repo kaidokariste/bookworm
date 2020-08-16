@@ -39,3 +39,5 @@
 
 # Gloud based tech stack
 * AWS or GCP
+
+https://www.quora.com/How-do-I-learn-Apache-Spark
