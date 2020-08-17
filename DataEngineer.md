@@ -45,3 +45,4 @@
 
 
 https://www.quora.com/How-do-I-learn-Apache-Spark
+https://okeanos.grnet.gr/home/
