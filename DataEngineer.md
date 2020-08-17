@@ -40,4 +40,7 @@
 # Gloud based tech stack
 * AWS or GCP
 
+#Hadoop ecosystem
+
+
 https://www.quora.com/How-do-I-learn-Apache-Spark
