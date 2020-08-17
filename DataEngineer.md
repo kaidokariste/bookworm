@@ -44,6 +44,6 @@
 ![Hadoop stach](img/HadoopStack.png "Hadoop ecosystem")
 
 
-https://www.quora.com/How-do-I-learn-Apache-Spark
-https://okeanos.grnet.gr/home/
-https://dzone.com/articles/how-set-multi-node-hadoop
+https://www.quora.com/How-do-I-learn-Apache-Spark 
+https://okeanos.grnet.gr/home/ 
+https://dzone.com/articles/how-set-multi-node-hadoop 
