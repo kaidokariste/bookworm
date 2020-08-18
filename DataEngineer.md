@@ -2,13 +2,11 @@
 * **Hadoop/Spark ecosystem** - Hadoop, Hive, Apache Spark, Kafka and HDFS. (Tesla requirement)
 * Spark, MapReduce, HDFS, Cassandra, Kafka (Apple)
 * Snowflake 
-* MapReduce
 * Google BigQuery
 * AWS Redshift
 * Presto 
 * Druid 
 * Apache Flink
-
 * Kimball warehouse architecture
 * Working experience with MPP systems (Snowflake, Spark SQL, Hive) and NoSQL systems (MongoDB, etc).
 
@@ -48,3 +46,4 @@ https://www.quora.com/How-do-I-learn-Apache-Spark
 https://okeanos.grnet.gr/home/  
 https://dzone.com/articles/how-set-multi-node-hadoop   
 https://cognitiveclass.ai/  
+https://blog.ippon.tech/mongodb-and-apache-spark-getting-started-tutorial/  
