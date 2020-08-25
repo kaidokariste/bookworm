@@ -6,7 +6,7 @@
 `$sudo gpasswd -a myusername sudo` - Kasutaja lisamine sudo gruppi
 
 ## UNIX> Vim
-Esc koolon ja ..
+Esc koolon ja ..  
 `set number` - Näitab faili reanumbreid  
 `set nonumber` - Eemaldab failist reanumbrid  
 
