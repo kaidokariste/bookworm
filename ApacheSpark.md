@@ -1,9 +1,10 @@
 # Install Apache Spark on Windows
 https://phoenixnap.com/kb/install-spark-on-windows-10
+
 # Fast links
 `java -version` - Check if java is installed  
 `python –-version` - Check if python is installed  
-http://localhost:4040/ - UI for Spark
+http://localhost:4040/ - UI for Spark  
 `spark-shell` - open Spark Shell
 
 ## Prerequisites
