@@ -1,18 +1,16 @@
 # Install Apache Spark on Windows
 https://phoenixnap.com/kb/install-spark-on-windows-10
+# Fast links
+`java -version` - Check if java is installed  
+`python –-version` - Check if python is installed  
+http://localhost:4040/ - UI for Spark
+`spark-shell` - open Spark Shell
 
 ## Prerequisites
 * A system running Windows 10
 * A user account with administrator privileges (required to install software, modify file permissions, and modify system PATH)
 * Command Prompt or Powershell
 * A tool to extract .tar files, such as 7-Zip
-
-## How to check versions
-
-```unix
-java -version
-python –-version
-```
 
 **Step 1: Install Java**
 You can check Java version. I have Java 14  
@@ -60,10 +58,9 @@ CertUtil: -hashfile command completed successfully.
 3. In the Path add ```%SPARK_HOME%\bin``` and ```%HADOOP_HOME\bin%```
 
 **Step 6: Launch Spark**
-Open cmd and type ```spark-shell```
+Open cmd and type `spark-shell`
 
 ```
-
 C:\Users\kaido.kariste>spark-shell
 Welcome to
       ____              __
