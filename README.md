@@ -30,6 +30,7 @@ Esc koolon ja ..
 `$mv myOldFileName myNewFileName` - faili ümbernimetamine  
 `$ln -s git/myProject symApp` - loob sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp  
 `$realpath --relative-to=/folder/from /folder/to` - suhtelise kausta tee saamine (folder/from tavaliselt projekti root)
+`$cat /proc/meminfo` või `$cat /proc/meminfo` - Info masina mälu kohta . Viimases info MB
 
 ## UNIX > SSH ühendus remote serverisse
  - *myComputer* - arvuti, millega soovime repote serverisse/arvutisse ühendada
