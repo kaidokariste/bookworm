@@ -1,3 +1,5 @@
+![](img/apachesparklogo.png )
+
 * [Spark SQL Guide](#spark-sql-guide)  
    * [Reading in JSON file](#reading-in-the-json-file) 
 
