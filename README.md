@@ -17,6 +17,7 @@ Esc koolon ja ..
 `$rmdir myFolder` - tühja kataloogi kustutamine  
 `$rm -rf myFolder` - kataloogi kustutamine kui ta sisaldab faile  
 `$ps -A` - kõik masinas jooksvad protsessid  
+`$ps -aux | grep mongo`  - mongo protsessi otsimine kõikide protsesside hulgast  
 `$top` - aktiivsed protsessid  
 `$ps -u myUser` - kasutajaspetsiifiliselt aktiivsed protsessid  
 `$sudo cp /home/kaido/database.php /var/www/html/config` - faili/kausta kopeerimine  
