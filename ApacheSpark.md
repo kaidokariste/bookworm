@@ -1,3 +1,6 @@
+[Spark SQL Guide](#spark-sql-guide)
+
+
 # Install Apache Spark on Windows
 https://phoenixnap.com/kb/install-spark-on-windows-10
 
@@ -89,3 +92,6 @@ Output shows that RDD is created. Lets print out 11 lines
 ```
 x.take(11).foreach(println)
 ```
+
+# Spark SQL guide
+
