@@ -1,5 +1,5 @@
-[Spark SQL Guide](#spark-sql-guide)
-
+* [Spark SQL Guide](#spark-sql-guide)  
+   * [Reading in JSON file](#reading-in-the-json-file) 
 
 # Install Apache Spark on Windows
 https://phoenixnap.com/kb/install-spark-on-windows-10
@@ -94,4 +94,95 @@ x.take(11).foreach(println)
 ```
 
 # Spark SQL guide
+[Handling JSON files](https://spark.apache.org/docs/latest/sql-data-sources-json.html)  
+Let's do different parsing on json file looking like this  
+
+```
+{
+    "_id": {
+        "$oid": "5bfbedba3262d7327c1849b9"
+    },
+    "address": {
+        "city": "Tartu",
+        "county": "Tartu maakond",
+        "district": "Ränilinn",
+        "street": "Kaubanduse",
+        "houseNumber": "50",
+        "houseType": "Apartment building"
+    },
+    "paymentDate": {
+        "year": "2015",
+        "month": "July",
+        "season": "Summer"
+    },
+	"otherFees":[{"telefon": 17.00, "internet": 24.00}],
+    "paymentDetails": {
+        "centralHeating": 8.59,
+        "waterHeating": 14.4,
+        "waterConsumption": 16.22,
+        "gas": 0.52,
+        "garbageCollection": 2.88,
+        "overallElectricity": [{"night": 5.0},{"day": 2.99}],
+        "renovationFund": 31.48,
+        "administrationFee": 10.5,
+        "insurance": 2.3,
+        "janitor": 5.09,
+        "total": 103.03
+    }
+}
+```
+## Reading in the JSON File
+```
+Dataset<Row> df = ss.read().option("multiline","true").json(<path-to-json-file>);
+```
+`.option("multiline","true")` - necessary only if the JSON looks like above. If the JSOn is in one row (no line breaks), then this is not necessary
+
+Using `df.PrintSchema()` we will get JSON schema as follows
+```
+root
+ |-- _id: struct (nullable = true)
+ |    |-- $oid: string (nullable = true)
+ |-- address: struct (nullable = true)
+ |    |-- city: string (nullable = true)
+ |    |-- county: string (nullable = true)
+ |    |-- district: string (nullable = true)
+ |    |-- houseNumber: string (nullable = true)
+ |    |-- houseType: string (nullable = true)
+ |    |-- street: string (nullable = true)
+ |-- otherFees: array (nullable = true)
+ |    |-- element: struct (containsNull = true)
+ |    |    |-- internet: double (nullable = true)
+ |    |    |-- telefon: double (nullable = true)
+ |-- paymentDate: struct (nullable = true)
+ |    |-- month: string (nullable = true)
+ |    |-- season: string (nullable = true)
+ |    |-- year: string (nullable = true)
+ |-- paymentDetails: struct (nullable = true)
+ |    |-- administrationFee: double (nullable = true)
+ |    |-- centralHeating: double (nullable = true)
+ |    |-- garbageCollection: double (nullable = true)
+ |    |-- gas: double (nullable = true)
+ |    |-- insurance: double (nullable = true)
+ |    |-- janitor: double (nullable = true)
+ |    |-- overallElectricity: array (nullable = true)
+ |    |    |-- element: struct (containsNull = true)
+ |    |    |    |-- day: double (nullable = true)
+ |    |    |    |-- night: double (nullable = true)
+ |    |-- renovationFund: double (nullable = true)
+ |    |-- total: double (nullable = true)
+ |    |-- waterConsumption: double (nullable = true)
+ |    |-- waterHeating: double (nullable = true)
+```
+If the key-value pair is inside JSOn object, the quering is quite straight forward (example _address.city_)
+Things will go a bit complicated, when they are inside arrays. But following example will show the logic.
+```
+        // SQL statements can be run by using the sql methods provided by spark
+        Dataset<Row> namesDF =
+                ss.sql("SELECT address.city, otherFees[0].internet, paymentDetails.overallElectricity[1].day FROM maksud");
+        namesDF.show();
+```
+In array cases, you have to specify array index where to search and then appropriate key. 
+
+
+
 
