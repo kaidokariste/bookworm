@@ -96,7 +96,8 @@ x.take(11).foreach(println)
 ```
 
 # Spark SQL guide
-[Handling JSON files](https://spark.apache.org/docs/latest/sql-data-sources-json.html)  
+* [Handling JSON files](https://spark.apache.org/docs/latest/sql-data-sources-json.html)  
+* [Code for following short example](https://github.com/kaidokariste/java-textbook/tree/master/SPARK)  
 Let's do different parsing on json file looking like this  
 
 ```
