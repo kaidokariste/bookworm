@@ -15,7 +15,8 @@ thought I would describe it also here.
 
 ## Steps to go trough
 1. Make sure you have installed Cassandra Driver to DataGrip.  
-**File > Data Sources..** , and if you add new Cassandra data source, you see also before connection credentials, wich driver it is using.  
+**File > Data Sources..** , and if you add new Cassandra data source, you see also before connection credentials, wich driver it is using.
+For me, it worked ou when I used cassandra-jdbc-driver-1.3.4,jar 
 
 2. Go to Datastax UI, choose your database, click connect, and under Connection Method choose driver. Now you have opportunity to "Download Secure Connect Bundle".
 Save it some place, where you can find it later and unzip it. Inside the folder are some files. Important ones are:
