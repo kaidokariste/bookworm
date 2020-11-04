@@ -1,7 +1,7 @@
 ![](img/cassandralogo.png )
 
 * [Connecting to Cassandra from Datagrip](#Connecting-to-Cassandra-from-Datagrip)  
-   * [CSQL](#CSQL) 
+   * [Data type mapping between Postgres and Cassandra](#Data-type-mapping-between-Postgres-and-Cassandra) 
 
 # Install Apache Cassandra on Windows
 https://phoenixnap.com/kb/install-spark-on-windows-10
@@ -36,3 +36,30 @@ From config.json the mapping to General tab boxes are:
 
 If filled correctly then now you should be able to connect.
 You can do ```SELECT dateof(now()) FROM system.local ;``` for testing purpose. Should return local time
+
+## Data type mapping between Postgres and Cassandra
+
+| CQL type | PostgreSQL type |
+| --- | --- |
+| bigint | bigint |
+| blob | bytea |
+| boolean | boolean |
+| counter | bigint |
+| date | date |
+| decimal | decimal |
+| double | float8 |
+| float | float4 |
+| inet | inet |
+| int | int |
+| list\<type\> | type[] |
+| map\<type, type\> | json |
+| set\<type\> | type[] |
+| smallint | smallint |
+| text | text |
+| time | timetz |
+| timestamp | timestamptz |
+| timeuuid | uuid |
+| tinyint | smallint |
+| tuple\<type,type,...\> | json |
+| uuid | uuid |
+| varint | int |
