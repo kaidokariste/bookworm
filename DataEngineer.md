@@ -30,6 +30,7 @@
 * Familiarity with workflow management tools (Airflow).
 
 # BI tools
+* Domo
 * Tableau
 * Looker
 * D3
