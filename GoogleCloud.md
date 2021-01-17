@@ -1,4 +1,4 @@
-![Hadoop stach](img/googleCloud.png "Google Cloud")
+![Google Cloud Platform](img/googleCloud.jpg "Google Cloud")
 ##  Creating Virtual Machine and connecting with Putty, create cron and install python
 1. [Connect via PuTTY to Linux VM on Google Cloud](https://youtu.be/fmh94mNQHQc)  
 2. [How to test cron in CentOs](https://www.konordo.com/blog/how-test-cron-centos)  
