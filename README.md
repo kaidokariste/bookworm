@@ -9,6 +9,7 @@
 Esc koolon ja ..  
 `set number` - Näitab faili reanumbreid  
 `set nonumber` - Eemaldab failist reanumbrid  
+`set bg=dark` - Kaotab ära tumesinise teksti, muudab heledamaks  
 
 ## UNIX > Enimkasutatavad käsud
 `$touch myFile`    - uus fail  
