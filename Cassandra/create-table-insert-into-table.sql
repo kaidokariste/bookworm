@@ -22,3 +22,9 @@ UPDATE korter.communal_fees
 SET fees = fees + {'SoeVesi': 4.65}
 WHERE id = 57c339a4-9ad8-41ff-a5e2-30182460551c
   and appartment_code = 'MURAKA3-5';
+
+CREATE TABLE korter.temperature
+(
+    id              UUID,
+    temperature double
+);
