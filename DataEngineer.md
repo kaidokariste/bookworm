@@ -9,6 +9,7 @@
 * Apache Flink
 * Kimball warehouse architecture
 * Working experience with MPP systems (Snowflake, Spark SQL, Hive) and NoSQL systems (MongoDB, etc).
+* Kaggle https://www.kaggle.com/
 
 # Programming languages
 * Python 
@@ -23,7 +24,7 @@
 * key-value (ElasticSearch, Apache Cassandra) 
 * optimization (e.g. Apache Calcite)
 
-## data flow an storage
+## Data flow an storage
 * Data pipelines (ETLs, real-time, low-latency data processing)
 * Data storage formats (Parquet, OCR)
 * Experience building platforms with either ECS or Kubernetes
