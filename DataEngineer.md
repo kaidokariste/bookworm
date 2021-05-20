@@ -41,7 +41,7 @@
 * AWS or GCP
 
 # Hadoop ecosystem
-![Hadoop stach](img/HadoopStack.png "Hadoop ecosystem")
+![Hadoop stack](img/HadoopStack.png "Hadoop ecosystem")
 
 
 https://www.quora.com/How-do-I-learn-Apache-Spark  
