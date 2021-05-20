@@ -26,7 +26,7 @@ Esc koolon ja ..
 `$cat myFile` - faili sisu vaatamine  
 `$sudo tar -jcvf myArchive.tbz2 myFolder` - arhiivi tekitamine kaustast  
 `$tar -jxvf myArchive.tbz2` - arhiivi lahtipakkimine  
-`$du -h` - disk usage  
+`$du -sh /folder/path/` - Kausta suurus GB (h)uman readable vormis.     
 `$du -h -d 1` - disk usage üks kategooria täpsemalt  
 `$df -h` - üldine kettakasutus  
 `$mv myOldFileName myNewFileName` - faili ümbernimetamine  
