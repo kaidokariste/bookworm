@@ -30,7 +30,8 @@ Esc koolon ja ..
 `$du -h -d 1` - disk usage üks kategooria täpsemalt  
 `$df -h` - üldine kettakasutus  
 `$mv myOldFileName myNewFileName` - faili ümbernimetamine  
-`$ln -s git/myProject symApp` - loob sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp  
+`$ln -s git/myProject symApp` - loob uue sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp  
+`$ln -sf git/myProject symApp` - loob või uuendab sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp
 `$realpath --relative-to=/folder/from /folder/to` - suhtelise kausta tee saamine (folder/from tavaliselt projekti root)  
 `$cat /proc/meminfo` või `$cat /proc/meminfo` - Info masina mälu kohta . Viimases info MB  
 `$find . -name "file_name.sh"` - Search some specific file
