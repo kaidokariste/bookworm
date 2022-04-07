@@ -27,14 +27,15 @@ Esc koolon ja ..
 `$sudo tar -jcvf myArchive.tbz2 myFolder` - arhiivi tekitamine kaustast  
 `$tar -jxvf myArchive.tbz2` - arhiivi lahtipakkimine  
 `$du -sh /folder/path/` - Kausta suurus GB (h)uman readable vormis.     
-`$du -h -d 1` - disk usage üks kategooria täpsemalt  
+`$du -h --max-depth=1 html` - kausta html alamkaustade suurused   
 `$df -h` - üldine kettakasutus  
 `$mv myOldFileName myNewFileName` - faili ümbernimetamine  
 `$ln -s git/myProject symApp` - loob uue sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp  
 `$ln -sf git/myProject symApp` - loob või uuendab sümlingi täpsustatud kaustast aktiivsesse kausta, kaustanimega symApp
 `$realpath --relative-to=/folder/from /folder/to` - suhtelise kausta tee saamine (folder/from tavaliselt projekti root)  
 `$cat /proc/meminfo` või `$cat /proc/meminfo` - Info masina mälu kohta . Viimases info MB  
-`$find . -name "file_name.sh"` - Search some specific file
+`$find . -name "file_name.sh"` - Search some specific file  
+`$find /var/www/html/user/files/ -type f -mtime +30 -ls` - vanemad kui 30 päeva failid koos lisainfoga
 
 ## UNIX > SSH ühendus remote serverisse
  - *myComputer* - arvuti, millega soovime repote serverisse/arvutisse ühendada
