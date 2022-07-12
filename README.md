@@ -19,7 +19,7 @@ Esc koolon ja ..
 `$rm -rf myFolder` - kataloogi kustutamine kui ta sisaldab faile  
 `$ps -A` - kõik masinas jooksvad protsessid  
 `$ps -aux | grep mongo`  - mongo protsessi otsimine kõikide protsesside hulgast  
-`$top` - aktiivsed protsessid  
+`$top -i` - aktiivsed protsessid ja CPU kasutus 
 `$ps -u myUser` - kasutajaspetsiifiliselt aktiivsed protsessid  
 `$sudo cp /home/kaido/database.php /var/www/html/config` - faili/kausta kopeerimine  
 `$ls -lah` - faili täiendatud nimekiri  
