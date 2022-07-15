@@ -1,4 +1,4 @@
-![](img/airflowlogo.png )
+![](../img/airflowlogo.png )
 # Installin Apache Airflow in Ubuntu 20.04
 ## Create new linux user
 First thing what would be good to do is add separate Linux user for airflow related things and not run everything under root:
