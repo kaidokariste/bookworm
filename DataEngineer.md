@@ -6,6 +6,7 @@
 * AWS Redshift
 * Presto 
 * Druid 
+* Vertica
 * Apache Flink
 * Kimball warehouse architecture
 * Working experience with MPP systems (Snowflake, Spark SQL, Hive) and NoSQL systems (MongoDB, etc).
@@ -19,7 +20,7 @@
 # Good knowledge of 
 ## Purpose built databases:  
 * relational (e.g. MySQL, PostgreSQL) 
-* columnar (e.g. AWS Redshift) 
+* columnar (e.g. AWS Redshift, Vertica) 
 * in-memory (Redis) 
 * key-value (ElasticSearch, Apache Cassandra) 
 * optimization (e.g. Apache Calcite)
@@ -28,7 +29,7 @@
 * Data pipelines (ETLs, real-time, low-latency data processing)
 * Data storage formats (Parquet, OCR)
 * Experience building platforms with either ECS or Kubernetes
-* Familiarity with workflow management tools (Airflow).
+* Familiarity with workflow management tools (Airflow). ✔️  
 
 # BI tools
 * Domo
