@@ -48,6 +48,41 @@ Esc koolon ja ..
  3. Puttyga ühendades, anna ette _myUsername@remoteHost_ ja lisa juurde _private_key_
  
 # Git
+## Intalling GIT
+Ubuntu
+```bash
+$ sudo apt-get install git
+git --version
+```
+CentOS
+```
+yum install git
+git --version
+```
+Generat SSH key pair to connect repository (as local user)  
+```
+$ ssh-keygen -t rsa
+```   
+Copy your public key to add it into Github.
+```
+$ cat ~/.ssh/id_rsa.pub
+```
+Configure your global identity
+```
+$ git config --global user.name "firstname.surname"
+$ git config --global user.email "firstname.surname@bigbank.ee"
+```
+Clone your repo
+```
+$ cd /your/desired/folder
+$ git clone ssh://git@stash.com:7999/myrepo/myrepo.git
+```
+Check out desired branch
+```
+git checkout --track remotes/origin/master
+```
+
+
 ## Git > Enimkasutataud käsud
 
 `$git remote -v ` -näitab "fetch" ja "pull" remote aadresse  
