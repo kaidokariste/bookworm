@@ -70,7 +70,7 @@ $ cat ~/.ssh/id_rsa.pub
 Configure your global identity
 ```
 $ git config --global user.name "firstname.surname"
-$ git config --global user.email "firstname.surname@bigbank.ee"
+$ git config --global user.email "firstname.surname@mydomain.xx"
 ```
 Clone your repo
 ```
