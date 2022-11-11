@@ -1,6 +1,6 @@
 <p align="center"><img src="../img/kafkalogo.png"></p>
 
-* [Connecting to Cassandra from Datagrip](#Connecting-to-Cassandra-from-Datagrip)  
+* [Set up Kafka broker](#Set-up-Kafka-broker)  
    * [Data type mapping between Postgres and Cassandra](#Data-type-mapping-between-Postgres-and-Cassandra) 
 
 # Install Apache Cassandra on Windows
@@ -8,7 +8,7 @@ https://phoenixnap.com/kb/install-spark-on-windows-10
 
 # Fast links
 
-# Connecting to Cassandra from Datagrip
+# Set up Kafka broker
 As our company is mainly using DataGrip for SQL related works, then I started to investigate possibility
 to connect Cassandra, running in Datastax Cloud. As it was not trivial and finally took me around 2h, to set up connection, then
 thought I would describe it also here.
