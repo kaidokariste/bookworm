@@ -2,29 +2,60 @@
 
 * [Set up Kafka broker](#Set-up-Kafka-broker)  
    * [Data type mapping between Postgres and Cassandra](#Data-type-mapping-between-Postgres-and-Cassandra) 
-
-# Install Apache Cassandra on Windows
-https://phoenixnap.com/kb/install-spark-on-windows-10
-
-# Fast links
+* [References](#References)
 
 # Set up Kafka broker
-As our company is mainly using DataGrip for SQL related works, then I started to investigate possibility
-to connect Cassandra, running in Datastax Cloud. As it was not trivial and finally took me around 2h, to set up connection, then
-thought I would describe it also here.
+Here is current docker-compose.yml that is running in my Oracle VM CentOS7 based machine.  
+```YAML
+version: '3'
+services:
+  zookeeper:
+    image: 'confluentinc/cp-zookeeper:7.0.1'
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+  broker:
+    image: 'confluentinc/cp-kafka:7.0.1'
+    container_name: broker
+    ports:
+      - 9092:9092
+      - 29093:29093
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      # Exposes 9092 for external connections to the broker
+      # Use kafka:29092 for connections internal on the docker network
+      # See https://rmoff.net/2018/08/02/kafka-listeners-explained/ for details
+      KAFKA_LISTENERS: "INTERNAL://:29092,EXTERNAL://:29093,GLOBAL://:9092"
+      KAFKA_ADVERTISED_LISTENERS: 'INTERNAL://broker:29092,EXTERNAL://localhost:29093,GLOBAL://192.168.56.103:9092'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,GLOBAL:PLAINTEXT'
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+  kafka-ui:
+    container_name: kafka-ui
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - zookeeper
+      - broker
+    environment:
+      KAFKA_CLUSTERS_0_NAME: kc1
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: broker:29092
+      KAFKA_CLUSTERS_0_METRICS_PORT: 9997
+      #KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schemaregistry0:8085
+      # KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: first
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://broker:8083
+```
 
 ## Steps to go trough
-1. Make sure you have installed Cassandra Driver to DataGrip.  
-**File > Data Sources..** , and if you add new Cassandra data source, you see also before connection credentials, wich driver it is using.
-For me, it worked ou when I used cassandra-jdbc-driver-1.3.4,jar 
 
-2. Go to Datastax UI, choose your database, click connect, and under Connection Method choose driver. Now you have opportunity to "Download Secure Connect Bundle".
-Save it some place, where you can find it later and unzip it. Inside the folder are some files. Important ones are:
-- ca - under newly created datasource window, choose SSH/SSL, thick **Use SSL** and map it to *CA file* box
-- cert - same thing, map it under *Client certificate file* box.
-- config - open with notepad. There you get your connection parameters
-- key - map it under *Client key file*
-Mode can stay required
 
 ___
-* Connecting-to-Cassandra-from-Datagri
+# References
+* [Apache Kafka® Quick Start](https://developer.confluent.io/quickstart/kafka-docker/)  
