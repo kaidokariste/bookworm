@@ -62,3 +62,4 @@ ___
 * [Kafka listeners explained](https://rmoff.net/2018/08/02/kafka-listeners-explained/)  
 * [Baeldung Kafka docker connection](https://www.baeldung.com/kafka-docker-connection)  
 * [Running Kafka in Docker machine](https://medium.com/@marcelo.hossomi/running-kafka-in-docker-machine-64d1501d6f0b)  
+* [Example Kafka Compose files](https://github.com/provectus/kafka-ui/blob/master/documentation/compose/DOCKER_COMPOSE.md)  
