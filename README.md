@@ -36,6 +36,8 @@ Esc koolon ja ..
 `$cat /proc/meminfo` või `$cat /proc/meminfo` - Info masina mälu kohta . Viimases info MB  
 `$find . -name "file_name.sh"` - Search some specific file  
 `$find /var/www/html/user/files/ -type f -mtime +30 -ls` - vanemad kui 30 päeva failid koos lisainfoga
+`$find /home/airflow_user/airflow/logs/scheduler -type f -mtime +30 -delete` - kustuta vanemad kui 30 päeva logi failid.  
+`$find . -type d -empty -delete` - kustuta kausta sees olevad tühjad kaustad  
 
 ## UNIX > SSH ühendus remote serverisse
  - *myComputer* - arvuti, millega soovime repote serverisse/arvutisse ühendada
