@@ -57,5 +57,7 @@ services:
 
 
 ___
-# References
+## References
 * [Apache Kafka® Quick Start](https://developer.confluent.io/quickstart/kafka-docker/)  
+* [Kafka listeners explained](https://rmoff.net/2018/08/02/kafka-listeners-explained/)  
+* [Baeldung Kafka docker connection](https://www.baeldung.com/kafka-docker-connection)  
