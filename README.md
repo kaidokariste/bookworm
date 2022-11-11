@@ -119,6 +119,8 @@ git checkout --track remotes/origin/master
 `$docker cp container:src_path dest:path ` - failide kopeerimine konteinerist hosti  
 `$docker cp SRC_PATH CONTAINER:DEST_PATH ` - failide kopeerimine hostist konteinerisse  
 `$docker build --no-cache -t <container-name> .` - ilma cachita konteineri buildimine dockerfailist  
+`$docker compose rm -svf` - docker-compose.yaml olemasolul keskkonna puhastamine enne jooksutamist  
+`$docker compose up -d` - docker-compose.yaml olemasolul teenuste konteinerite jooksutamine taustal  
 
 ### Weblinks
 
