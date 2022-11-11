@@ -122,6 +122,7 @@ git checkout --track remotes/origin/master
 `$docker compose rm -svf` - docker-compose.yaml olemasolul keskkonna puhastamine enne jooksutamist  
 `$docker compose up -d` - docker-compose.yaml olemasolul teenuste konteinerite jooksutamine taustal  
 `$docker logs <container_id>` - konteineri logid, töötab ka mitteaktiivse konteineri puhul  
+`$sudo systemctl start docker` - starting Docker  
 
 ### Weblinks
 
