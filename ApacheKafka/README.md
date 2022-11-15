@@ -51,6 +51,23 @@ services:
       #KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schemaregistry0:8085
       # KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: first
       KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://broker:8083
+  connector:
+    image: 'debezium/connect:latest'
+    container_name: debezium
+    ports:
+      - 8083:8083
+      - 9012:9012
+    depends_on:
+      - zookeeper
+      - broker
+    environment:
+      BOOTSTRAP_SERVERS: broker:29092
+      GROUP_ID: 1
+      CONFIG_STORAGE_TOPIC: connect_configs
+      OFFSET_STORAGE_TOPIC: connect_offsets
+      STATUS_STORAGE_TOPIC: connect_statuses
+      JMXHOST: "0.0.0.0"
+      JMXPORT: 9012
 ```
 
 ## Steps to go trough
