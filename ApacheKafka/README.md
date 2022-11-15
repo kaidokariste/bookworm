@@ -70,7 +70,7 @@ services:
       OFFSET_STORAGE_TOPIC: connect_offsets
       STATUS_STORAGE_TOPIC: connect_statuses
 ```
-## Creating connector.
+## Creating and deleting connector.
 It can be done through API request. Log in to "connector" container and execute  
 ```
 curl -H 'Content-Type: application/json' debezium:8083/connectors --data '
@@ -101,7 +101,10 @@ but I managed to do it also through UI by insering just this config part
     "snapshot.mode":"always"	
   }
 ```
-
+Deleting can be done also through API or in UI. In API then
+```
+[kafka@d1ee95f3f528 ~]$ curl -i -X DELETE debezium:8083/connectors/cycling-connector/ 
+```
 
 ## Steps to go trough
 When booting up all the containers, broker(kafka) sometimes crashes with message `[2022-11-15 06:01:40,837] ERROR Error while creating ephemeral at /brokers/ids/1, node already exists and owner '72057601994653697' does not match current session '72062595700883457' (kafka)`. For this cases clean up docker cache `$ docker compose rm -svf`  
