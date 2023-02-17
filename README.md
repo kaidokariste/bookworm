@@ -126,6 +126,7 @@ git checkout --track remotes/origin/master
 `$sudo systemctl start docker` - starting Docker  
 `$docker run -p 127.0.0.1:3000:5000 docker-image-tag`- bind docker container port 5000 to localhost port 3000  
 `$docker run -v volume-name:/path/in/docker/image container-tag` - named volumes (choose your volume_name and docker creates this itself outside container).  
+`$docker volume inspect volume-name` - vaata, kus _volume_ asub host masinas.  
 
 ### Weblinks
 
