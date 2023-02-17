@@ -102,7 +102,6 @@ git checkout --track remotes/origin/master
 `$find -name *.properties -exec git rm --cached {} \;`- Remove files from index but dont remove file itself . 
 
 # Docker
-## Enimkasutatavad käsud
 `$docker images `- näitab teeki kohalikest Docker imagetest  
 `$docker ps ` - aktiivsete konteinerite loend  
 `$docker ps -a ` - kõik konteinerid  
@@ -125,6 +124,8 @@ git checkout --track remotes/origin/master
 `$docker compose up -d` - docker-compose.yaml olemasolul teenuste konteinerite jooksutamine taustal  
 `$docker logs <container_id>` - konteineri logid, töötab ka mitteaktiivse konteineri puhul  
 `$sudo systemctl start docker` - starting Docker  
+`$docker run -p 127.0.0.1:3000:5000 docker-image-tag`- bind docker container port 5000 to localhost port 3000  
+`$docker run -v volume-name:/path/in/docker/image container-tag` - named volumes (choose your volume_name and docker creates this itself outside container).  
 
 ### Weblinks
 
