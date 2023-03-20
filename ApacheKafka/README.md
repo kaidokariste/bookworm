@@ -39,6 +39,8 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_JMX_PORT: 9997
       KAFKA_JMX_HOSTNAME: localhost
+      KAFKA_LOG_RETENTION_MS: 90000 # Messages older than 90 seconds will be deleted
+   	  KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 10000 # Check after 10 seconds if something is older than 90 seconds 	
   kafka-ui:
     container_name: kafka-ui
     image: provectuslabs/kafka-ui:latest
