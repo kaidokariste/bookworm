@@ -10,28 +10,26 @@ Here is current docker-compose.yml that is running in my Oracle VM CentOS7 based
 version: '3'
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.3.0
+    image: 'confluentinc/cp-zookeeper:7.3.0'
     container_name: zookeeper
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
-  broker:
+  broker1:
     image: 'confluentinc/cp-kafka:7.3.0'
     container_name: broker
     ports:
-      - 9092:9092
-      - 29093:29093
-      - 9997:9997
+      - '9092:9092'
+      - '29093:29093'
+      - '9997:9997'
     depends_on:
       - zookeeper
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
-      # Exposes 9092 for external connections to the broker
-      # Use kafka:29092 for connections internal on the docker network
-      # See https://rmoff.net/2018/08/02/kafka-listeners-explained/ for details
-      KAFKA_LISTENERS: "INTERNAL://:29092,EXTERNAL://:29093,GLOBAL://:9092"
-      KAFKA_ADVERTISED_LISTENERS: 'INTERNAL://broker:29092,EXTERNAL://localhost:29093,GLOBAL://192.168.56.103:9092'
+      KAFKA_LISTENERS: 'INTERNAL://:29092,EXTERNAL://:29093,GLOBAL://:9093'
+      KAFKA_ADVERTISED_LISTENERS: >-
+        INTERNAL://broker1:29092,EXTERNAL://localhost:29093,GLOBAL://192.168.56.103:9093
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,GLOBAL:PLAINTEXT'
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
@@ -39,38 +37,62 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_JMX_PORT: 9997
       KAFKA_JMX_HOSTNAME: localhost
-      KAFKA_LOG_RETENTION_MS: 90000 # Messages older than 90 seconds will be deleted
-   	  KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 10000 # Check after 10 seconds if something is older than 90 seconds 	
+      KAFKA_LOG_RETENTION_MS: 90000
+      KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 10000
+  broker2:
+    image: 'confluentinc/cp-kafka:7.3.0'
+    container_name: broker
+    ports:
+      - '9092:9092'
+      - '29093:29093'
+      - '9997:9997'
+    depends_on:
+      - zookeeper
+    environment: null
+    KAFKA_BROKER_ID: 2
+    KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+    KAFKA_LISTENERS: 'INTERNAL://:29094,EXTERNAL://:29095,GLOBAL://:9092'
+    KAFKA_ADVERTISED_LISTENERS: >-
+      INTERNAL://broker2:29094,EXTERNAL://localhost:29095,GLOBAL://192.168.56.103:9093
+    KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT,GLOBAL:PLAINTEXT'
+    KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+    KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+    KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+    KAFKA_JMX_PORT: 9997
+    KAFKA_JMX_HOSTNAME: localhost
+    KAFKA_LOG_RETENTION_MS: 90000
+    KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 10000
   kafka-ui:
     container_name: kafka-ui
-    image: provectuslabs/kafka-ui:latest
+    image: 'provectuslabs/kafka-ui:latest'
     ports:
-      - 8080:8080
+      - '8080:8080'
     depends_on:
       - zookeeper
       - broker
       - connector
     environment:
       KAFKA_CLUSTERS_0_NAME: kc1
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: broker:29092
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: 'broker:29092'
       KAFKA_CLUSTERS_0_METRICS_PORT: 9997
-      #KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schemaregistry0:8085
       KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: first
-      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://debezium:8083
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: 'http://debezium:8083'
   connector:
     image: 'debezium/connect:2.0'
     container_name: debezium
     ports:
-      - 8083:8083
+      - '8083:8083'
     depends_on:
       - zookeeper
       - broker
     environment:
-      BOOTSTRAP_SERVERS: broker:29092
+      BOOTSTRAP_SERVERS: 'broker:29092'
       GROUP_ID: 1
       CONFIG_STORAGE_TOPIC: connect_configs
       OFFSET_STORAGE_TOPIC: connect_offsets
       STATUS_STORAGE_TOPIC: connect_statuses
+
 ```
 ## Creating and deleting connector.
 It can be done through API request. Log in to "connector" container and execute  
