@@ -157,6 +157,19 @@ Deleting can be done also through API or in UI. In API then
 ## Steps to go trough
 When booting up all the containers, broker(kafka) sometimes crashes with message `[2022-11-15 06:01:40,837] ERROR Error while creating ephemeral at /brokers/ids/1, node already exists and owner '72057601994653697' does not match current session '72062595700883457' (kafka)`. For this cases clean up docker cache `$ docker compose rm -svf`  
 
+## Replica identity  
+```sql
+SELECT oid::regclass::text,
+      CASE relreplident
+          WHEN 'd' THEN 'default'
+          WHEN 'n' THEN 'nothing'
+          WHEN 'f' THEN 'full'
+          WHEN 'i' THEN 'index'
+       END AS replica_identity
+FROM pg_class
+where oid::regclass::text ilike '%uci%';
+```
+
 ___
 ### References
 * [Apache Kafka® Quick Start](https://developer.confluent.io/quickstart/kafka-docker/)  
