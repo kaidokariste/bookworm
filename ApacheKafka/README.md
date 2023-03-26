@@ -5,6 +5,19 @@
 * [References](#References)
 * [Common issues](#common-issues)
 
+# Zookeeper
+Zookeeper goes hand to hand with kafka and manages brokers
+
+*Checking if zookeepe has registered all Kafka POD-s (if in Docker then go to zookeeper container)*
+```
+./bin/zookeeper-shell localhost:2181 ls /brokers/ids
+```
+Result is similar. Here we see that three brokers with id 1, 2, 3 are registered in zookeeper 
+> WatchedEvent state:SyncConnected type:None path:null   
+>[1, 2, 3]  
+>[2023-03-24 07:17:24,883] ERROR Exiting JVM with code 0 (org.apache.zookeeper.util.ServiceUtils)  
+
+
 # Set up Kafka broker
 Here is current docker-compose.yml that is running in my Oracle VM CentOS7 based machine.  
 ```YAML
