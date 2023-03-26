@@ -1,5 +1,6 @@
 <p align="center"><img src="../img/kafkalogo.png"></p>
 
+* [Zookeeper](#zookeeper)  
 * [Set up Kafka broker](#Set-up-Kafka-broker)  
    * [Data type mapping between Postgres and Cassandra](#Data-type-mapping-between-Postgres-and-Cassandra) 
 * [References](#References)
