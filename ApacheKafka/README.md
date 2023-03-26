@@ -3,6 +3,7 @@
 * [Set up Kafka broker](#Set-up-Kafka-broker)  
    * [Data type mapping between Postgres and Cassandra](#Data-type-mapping-between-Postgres-and-Cassandra) 
 * [References](#References)
+* [Common issues](#common-issues)
 
 # Set up Kafka broker
 Here is current docker-compose.yml that is running in my Oracle VM CentOS7 based machine.  
@@ -169,6 +170,15 @@ SELECT oid::regclass::text,
 FROM pg_class
 where oid::regclass::text ilike '%uci%';
 ```
+
+# Common issues
+> kafka.common.InconsistentClusterIdException: The Cluster ID 9tkvcJWySr64IbgXgPa4rQ doesn't match stored clusterId Some(K5rm4jIvTLO9QkwVCcZtWQ) in meta.properties. The broker is trying to join the wrong cluster. Configured zookeeper.connect may be wrong.
+
+Remove the meta.properties file in kafka broker  
+```python
+rm -f /var/lib/kafka/data/meta.properties
+```
+
 
 ___
 ### References
