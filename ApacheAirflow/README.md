@@ -20,7 +20,7 @@ CREATE USER airflow_user WITH PASSWORD '............';
 GRANT ALL PRIVILEGES ON DATABASE airflow_db TO airflow_user;
 ```
 ## Intsall Python (also when you need update)
-I havw writen it here [How to install or update Python](https://github.com/kaidokariste/python#updating-python-in-ubuntu)
+I have written it here [How to install or update Python](https://github.com/kaidokariste/python#updating-python-in-ubuntu)
 
 ## Installing airflow
 The main command is below, but suggestion is to check if there exists corresponding Python version constraints file. Here you should check if there exists Python3.9 constraints for Airflow 2.3.3. Upgrading Airflow, the the command is the same, just versions change. 
