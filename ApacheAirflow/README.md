@@ -25,7 +25,7 @@ I have written it here [How to install or update Python](https://github.com/kaid
 ## Installing airflow
 The main command is below, but suggestion is to check if there exists corresponding Python version constraints file. Here you should check if there exists Python3.9 constraints for Airflow 2.3.3. Upgrading Airflow, the the command is the same, just versions change. 
 ```python
-# Airflow upgrade
+# Airflow upgrade, Installing airflow via pip3 ( as airflow_user )
 pip3 install "apache-airflow==2.3.3" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.3.3/constraints-3.9.txt"
 ```
 
