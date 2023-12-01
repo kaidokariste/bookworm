@@ -43,3 +43,36 @@ Now you should see airflow_folder under airflow_user. Go to airflow configuratio
 # Setting database to PG running locally in airflow.cfg:
 sql_alchemy_conn = postgresql+psycopg2://airflow_user:............@localhost:5432/airflow_db
 ```
+
+# Updating Airflow
+```
+# Airflow Upgrade
+ 
+#0 Check over some sytem parameters, make sure pip works (pip3 --help)
+python3 --version
+# Development: Python: 3.9.8 | Production: Python 3.9.9
+ 
+# Currently we are doing **Airflow 2.4.0 (2022-09-19) -> Airflow 2.4.1 (2022-09-30)**
+ 
+#1 Stop Airflow webserver and Scheduler
+[root@airflow ~] systemctl status airflow-webserver
+[root@airflow ~] systemctl status airflow-scheduler
+[root@airflow ~] systemctl stop airflow-webserver
+[root@airflow ~] systemctl stop airflow-scheduler
+ 
+ 
+#3 Prepare and do upgrade
+as airflow user:
+ 
+pip3 install "apache-airflow==2.4.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.4.1/constraints-3.9.txt"
+ 
+#4 Upgrade database
+airflow db upgrade
+ 
+#5 Start server
+[root@airflow ~] systemctl start airflow-webserver
+[root@airflow ~] systemctl start airflow-scheduler 
+ 
+#(optional) DB shell to drop or delete unnecessary data
+airflow db shell
+```
