@@ -39,6 +39,7 @@ Esc koolon ja ..
 `$find /home/airflow_user/airflow/logs/scheduler -type f -mtime +30 -delete` - kustuta vanemad kui 30 päeva logi failid.  
 `$find . -type d -empty -delete` - kustuta kausta sees olevad tühjad kaustad  
 `$chown -R kaido:kaido /run/some.file` - grant file owner and owning group to kaido  
+`$rm -r $(ls | grep '<part of folder name>')` - remove folder or froup of folders with same name. Should work also with files  
 
 ## UNIX > SSH ühendus remote serverisse
  - *myComputer* - arvuti, millega soovime repote serverisse/arvutisse ühendada
