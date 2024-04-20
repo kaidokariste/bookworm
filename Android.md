@@ -41,6 +41,31 @@ List of devices attached
 ```
 Device was unauthorized and i couldnt execute the shell command. What helped was disconnecting the phone and pressing "Revoke USB debugging authorization" (Under the USB debugging mode) and then reconnecting with USB.
 
+## Uninstalling the packages
+Normal look would be
+
+```
+PS C:\Users\kaido> adb devices
+List of devices attached
+33002f65b6cc14d7        device
+```
+
+Now go to shell and list packages
+```
+PS C:\Users\kaido> adb shell
+a3y17lte:/ $ pm list packages | grep 'samsung'
+```
+If you find the correct package then
+
+```
+a3y17lte:/ $ pm uninstall -k --user 0 com.samsung.android.calendar
+Success
+```
+
+I used the named "Package name viewer" app to get all the package names to uninstall.
+
+## When finished
+Turn off the developers mode. This will turn off also.
 
 ### References
 [How to install and use ADB on Windows](https://www.androidpolice.com/install-adb-windows-mac-linux-guide/)  
