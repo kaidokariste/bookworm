@@ -2,7 +2,7 @@
 
 * [Tableau releases](#Tableau-releases)
 * [Purge server](#Purge-server)
-* [Installimine 2025.3.4 näitel](#Installimine-2025-3-4-näitel)
+* [Installimine](#Installimine)
 
 # Tableau releases
 [Server releases](https://www.tableau.com/support/releases/server)
@@ -21,4 +21,4 @@ sudo apt autoremove -y
 sudo apt clean
 ```
 
-# Installimine 2025.3.4 näitel
+# Installimine
