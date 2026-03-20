@@ -1,8 +1,8 @@
 ![](img/tableaulogo.png )
 
-* [Tableau commands](#Tableau-releases)
+* [Tableau releases](#Tableau-releases)
 * [Purge server](#Purge-server)
-* [Installimine 2025.3.4 näitel](#Installimine-2025.3.4-näitel)
+* [Installimine 2025.3.4 näitel](#Installimine-2025-3-4-näitel)
 
 # Tableau releases
 [Server releases](https://www.tableau.com/support/releases/server)
