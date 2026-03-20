@@ -2,5 +2,5 @@
 
 * [Tableau commands](#Tableau-commands)  
 
-# Tableau commands
-Commands are based on OKD (_The Community Distribution of Kubernetes_)
+# Tableau releases
+[Server releases](https://www.tableau.com/support/releases/server)
