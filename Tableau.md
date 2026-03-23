@@ -2,7 +2,7 @@
 
 * [Tableau releases](#Tableau-releases)
 * [Purge server](#Purge-server)
-* [Installimine](#Installimine)
+* [TSM põhikäsud](#TSM-põhikäsud)
 
 # Tableau releases
 [Server releases](https://www.tableau.com/support/releases/server)
@@ -21,4 +21,12 @@ sudo apt autoremove -y
 sudo apt clean
 ```
 
-# Installimine
+# TSM põhikäsud
+```bash
+curl -x <cach-server-if needed> http://downloads.tableau.com/tssoftware/tableau-server-2025-3-4_amd64.deb -o tableau-server-2025-3-4_amd64.deb
+sudo apt-get install ./tableau-server-2025-3-4_amd64.deb - Ubuntus tableau install.
+tsm licenses list - litsentside vaatamine
+tsm licenses activate -k <SINU_VÕTI> - litsentsi aktiveerimine  
+tsm settings import -f /var/opt/tableau/identity_store.json - AD konfiguratsioonijsoni importimine  
+```
+
