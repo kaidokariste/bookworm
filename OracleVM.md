@@ -20,12 +20,16 @@ sudo apt install openssh-server
 
 # Check SSH status:
 
+```bash
 sudo systemctl status ssh
+```
 
 If not running:
 
+```bash
 sudo systemctl enable ssh
 sudo systemctl start ssh
+```
 
 2. Configure Port Forwarding in VirtualBox
 
@@ -50,7 +54,9 @@ Click OK to save.
 
 Run:
 
+```bash
 whoami
+```
 
 Example output:
 
