@@ -28,7 +28,7 @@ SELECT name,
 FROM snowflake.account_usage.users
 WHERE deleted_on IS NULL
 ORDER BY last_success_login DESC;
-``´
+```
 
 ## Schema loomine
 
