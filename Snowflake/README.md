@@ -18,13 +18,15 @@ SHOW SCHEMAS IN DATABASE db_name;
 SHOW USERS; -- kasutajate vaatamine
 ```
 
+Auditi mõttes viimase logini kontrollimine
 ```sql
--- Auditi mõttes viimase logini kontrollimine
 SELECT name,
        login_name,
        last_success_login,
        disabled,
-       default_role
+       default_role,
+       default_secondary_role,
+       default_warehouse
 FROM snowflake.account_usage.users
 WHERE deleted_on IS NULL
 ORDER BY last_success_login DESC;
@@ -56,4 +58,9 @@ USE ROLE SECURITYADMIN;
 GRANT USAGE ON DATABASE prod TO ROLE analyst_role;
 GRANT USAGE ON SCHEMA prod.sales_analytics TO ROLE analyst_role;
 GRANT SELECT ON ALL TABLES IN SCHEMA prod.sales_analytics TO ROLE analyst_role;
+```
+
+### Warehouside (Compute) manageerimine
+``` 
+DROP WAREHOUSE IF EXISTS COMPUTE_WH;
 ```
