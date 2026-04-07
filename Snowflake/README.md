@@ -64,3 +64,14 @@ GRANT SELECT ON ALL TABLES IN SCHEMA prod.sales_analytics TO ROLE analyst_role;
 ``` 
 DROP WAREHOUSE IF EXISTS COMPUTE_WH;
 ```
+
+### Anonüümsed protseduurid
+
+```sql
+DECLARE msg STRING;
+
+BEGIN
+    msg := 'Hello World';
+    RETURN msg;
+END;
+``` 
