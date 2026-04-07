@@ -9,8 +9,26 @@ SHOW ROLES; -- Kõik sulle antud rollid
 SHOW GRANTS TO USER "VICTOR.HUGO"; -- kasutaja rollide ja muude õiguste vaatamine. 
 SELECT CURRENT_ROLE(); -- Hetke rolli vaatamine
 SHOW SCHEMAS; -- Schemade vaatamine hetke andmebaasis
-SHOW SCHEMAS IN DATABASE db_name;   
+SHOW SCHEMAS IN DATABASE db_name;
 ```
+
+## Kasutajate haldus
+
+```sql
+SHOW USERS; -- kasutajate vaatamine
+```
+
+```sql
+-- Auditi mõttes viimase logini kontrollimine
+SELECT name,
+       login_name,
+       last_success_login,
+       disabled,
+       default_role
+FROM snowflake.account_usage.users
+WHERE deleted_on IS NULL
+ORDER BY last_success_login DESC;
+``´
 
 ## Schema loomine
 
