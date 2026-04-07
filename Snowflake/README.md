@@ -12,7 +12,7 @@ SHOW SCHEMAS; -- Schemade vaatamine hetke andmebaasis
 SHOW SCHEMAS IN DATABASE db_name;   
 ```
 
-### Schema loomine
+## Schema loomine
 
 ```sql
 CREATE SCHEMA IF NOT EXISTS bigdata.kaido_kariste WITH MANAGED ACCESS
