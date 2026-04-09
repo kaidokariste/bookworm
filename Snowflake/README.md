@@ -74,4 +74,23 @@ BEGIN
     msg := 'Hello World';
     RETURN msg;
 END;
-``` 
+```
+
+### JSON Protseduurid
+JSON Flat
+
+```sql
+    WITH flat AS (SELECT record_content:id::NUMBER AS id,
+                             record_content:modified_dtime::TIMESTAMP_LTZ as modified_dtime,
+                             f.key                     AS key,
+                             f.value                   AS value
+                      FROM <schema.json_containing_table>,
+                           LATERAL FLATTEN(INPUT => record_content) f
+                      )
+            SELECT *
+                             FROM flat
+                                 PIVOT (
+                                 MAX(value) FOR key IN (ANY)
+                                 )
+            order by id, modified_dtime asc;
+```
