@@ -14,10 +14,15 @@ DESC USER KAIDOKARISTE; -- Kasutaja parameetrite vaatamine
 ```
 
 ## Kasutajate haldus
-
 ```sql
 SHOW USERS; -- kasutajate vaatamine
 ```
+
+## Ajavööndid
+```sql
+ALTER SESSION SET TIMEZONE = 'UTC';
+ALTER SESSION SET TIMEZONE = 'Europe/Tallinn';
+``` 
 
 Auditi mõttes viimase logini kontrollimine
 ```sql
