@@ -10,6 +10,7 @@ SHOW GRANTS TO USER "VICTOR.HUGO"; -- kasutaja rollide ja muude õiguste vaatami
 SELECT CURRENT_ROLE(); -- Hetke rolli vaatamine
 SHOW SCHEMAS; -- Schemade vaatamine hetke andmebaasis
 SHOW SCHEMAS IN DATABASE db_name;
+DESC USER KAIDOKARISTE; -- Kasutaja parameetrite vaatamine
 ```
 
 ## Kasutajate haldus
