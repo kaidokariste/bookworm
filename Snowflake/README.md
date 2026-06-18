@@ -67,6 +67,22 @@ GRANT USAGE ON SCHEMA prod.sales_analytics TO ROLE analyst_role;
 GRANT SELECT ON ALL TABLES IN SCHEMA prod.sales_analytics TO ROLE analyst_role;
 ```
 
+### Andmebaasi suuruse statistika
+```sql
+select      DATABASE_NAME
+           ,sum(ACTIVE_BYTES / 1000000000) ACTIVE_GB
+           ,sum(TIME_TRAVEL_BYTES / 1000000000) TIME_TRAVEL_GB
+           ,sum(FAILSAFE_BYTES / 1000000000) FAILSAFE_GB
+           ,sum(RETAINED_FOR_CLONE_BYTES / 1000000000) RETAINED_FOR_CLONE_GB
+           ,ACTIVE_GB+TIME_TRAVEL_GB+FAILSAFE_GB+RETAINED_FOR_CLONE_GB TOTAL_GB
+from SNOWFLAKE.ACCOUNT_USAGE.DATABASES D
+    left join SNOWFLAKE.ACCOUNT_USAGE.TABLE_STORAGE_METRICS T
+        on D.DATABASE_ID  = T.TABLE_CATALOG_ID
+where   D.DELETED is null
+group by DATABASE_NAME
+order by DATABASE_NAME;
+```
+
 ### Warehouside (Compute) manageerimine
 ``` 
 DROP WAREHOUSE IF EXISTS COMPUTE_WH;
