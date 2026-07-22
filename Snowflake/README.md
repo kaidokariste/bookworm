@@ -5,6 +5,10 @@
 
 ## Administrative commands
 ```sql
+SHOW ACCOUNTS; - Näitab infot organisatsiooni kontode kohta
+```
+
+```sql
 SHOW SCHEMAS; -- Schemade vaatamine hetke andmebaasis
 SHOW SCHEMAS IN DATABASE db_name;
 ```
