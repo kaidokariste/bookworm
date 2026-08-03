@@ -22,6 +22,21 @@ SHOW ROLES; -- Kõik sulle antud rollid
 SELECT CURRENT_ROLE(); -- Hetke rolli vaatamine
 ```
 
+### Kasutaja loomine
+```sql
+CREATE USER KAIDOK
+    LOGIN_NAME = 'KAIDO.K'
+    DISPLAY_NAME = 'Kaido K'
+    DEFAULT_ROLE = SYSADMIN
+    DEFAULT_WAREHOUSE = DEF_WH
+    TYPE = PERSON;
+```
+
+## Andmebaasi haldus
+```sql
+SHOW GRANTS ON DATABASE DB_NAME; -- Andmebaasi kasutamiseks omistatud õigused
+```
+
 ## Ajavööndid
 ```sql
 ALTER SESSION SET TIMEZONE = 'UTC';
