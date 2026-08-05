@@ -8,7 +8,10 @@
 SHOW ACCOUNTS; - Näitab infot organisatsiooni kontode kohta
 ```
 
+## Andmebaasid ja schemad
 ```sql
+SHOW DATABASES;
+ALTER DATABASE <db> SET DATA_RETENTION_TIME_IN_DAYS = 30; # Data retention perioodi muutmine
 SHOW SCHEMAS; -- Schemade vaatamine hetke andmebaasis
 SHOW SCHEMAS IN DATABASE db_name;
 ```
