@@ -16,6 +16,14 @@ SHOW SCHEMAS; -- Schemade vaatamine hetke andmebaasis
 SHOW SCHEMAS IN DATABASE db_name;
 ```
 
+## Stage faialikogumid
+Stage nimi: parquet_stage
+```sql
+DESC STAGE whstage.parquet_stage; -- Stage configuration description
+LIST @whstage.parquet_stage;      -- Check uplaoded files to stage from every folder
+REMOVE @whstage.parquet_stage/folder_name; -- Remove full folder and all files
+```
+
 ## Kasutajate haldus
 ```sql
 SHOW USERS; -- kasutajate vaatamine
